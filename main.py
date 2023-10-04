@@ -32,9 +32,16 @@ while game_is_on:
         ball.bounce_y()
  #detect paddles and ball contact
 
-    if ball.xcor() >= 320 and ball.distance(r_paddle) <= 50 or ball.xcor() <= -320 and ball.distance(l_paddle) <= 50:
+    if ball.xcor() > 320 and ball.distance(r_paddle) < 50 or ball.xcor() <= -320 and ball.distance(l_paddle) < 50:
        ball.bounce_x()
 
+ #detect the miss then reset the ball's possition to home and then ball should start moving to other player
+ #r paddle
+    if ball.xcor() > 360 :
+        ball.miss()
+ # l paddle
+    if ball.xcor() < -360:
+        ball.miss()
 
 
 screen.exitonclick()
