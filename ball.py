@@ -22,4 +22,7 @@ class Ball(Turtle):
     def bounce_x(self):
         self.move_x *= -1
 
+    def miss(self):
+        self.home()
+        self.bounce_x()
 
